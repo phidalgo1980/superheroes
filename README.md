@@ -1,6 +1,6 @@
 # Superheros
 
-En base al enunciado del api propuesta se expone una posible solución detallando su instalación y uso.
+En base al enunciado del api propuesta, se expone una posible solución detallando su instalación y uso.
 
 Aclaración: esta solución se desarrolló en OpenJDK11 y Springboot 2.4.8 con Intellij como IDE y Linux Mint 19.1 Tessa como S.O.
 
@@ -38,5 +38,9 @@ Una vez abierto el cuadro de diálogo copiar el token anteponiendo `Bearer`.
 Podrá observarse que los servicios están con un ícono de candado cerrado, esto ya indica que los servicios serán utilizados de forma segura con el token cargado.
 
 ![alt text](https://github.com/phidalgo1980/superheros/blob/main/images/superheros_image_05.png?raw=true)
+
+Ejemplo de la invocación del servicio de búsqueda de superheroe por Id
+
+![alt text](https://github.com/phidalgo1980/superheros/blob/main/images/superheros_image_06.png?raw=true)
 
 
