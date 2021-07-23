@@ -1,27 +1,22 @@
 package es.mindata.superheroes.exception;
 
 
-import es.mindata.superheroes.lang.MessageResource;
 import es.mindata.superheroes.payload.response.MessageResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
 @ControllerAdvice
-public class SuperheroControllerAdvise {
+public class SuperheroControllerAdvise extends ResponseEntityExceptionHandler {
 	
 	private static final Logger logger = LoggerFactory.getLogger(SuperheroControllerAdvise.class);
 
-	@Autowired
-	MessageResource messageResource;
-	
 
 	@ExceptionHandler({ResourceNotFoundException.class})
 	public ResponseEntity<?> handlelNotFoundException(ResourceNotFoundException e){

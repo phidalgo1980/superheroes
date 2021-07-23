@@ -52,12 +52,12 @@ public class SuperheroController {
     @ApiOperation(value = "Devuelve los datos del superheroe por nombre", response = SuperheroResponse.class)
     public ResponseEntity<List<SuperheroResponse>> getSuperheroByName(@PathVariable("name") String name) {
 
-        List<Superhero> superheros = superheroService.findByName(name);
+        List<Superhero> superheroes = superheroService.findByName(name);
 
-        if(superheros.size() == 0)
+        if(superheroes.size() == 0)
             throw new ResourceNotFoundException(messageResource.getMessage(MessageKey.ERROR_SUPERHERO_EMPTY));
 
-        return ResponseEntity.ok(fromPageToList(superheros));
+        return ResponseEntity.ok(fromPageToList(superheroes));
     }
 
 
@@ -126,9 +126,9 @@ public class SuperheroController {
                 .build());
     }
 
-    private List<SuperheroResponse> fromPageToList(List<Superhero> superheros){
+    private List<SuperheroResponse> fromPageToList(List<Superhero> superheroes){
 
-        return superheros.stream()
+        return superheroes.stream()
                 .map( x -> SuperheroMapper.entityToResponse(x))
                 .collect(Collectors.toList());
     }
